@@ -11,8 +11,6 @@ class Student
   end
 
   def self.all
-    # retrieve all the rows from the "Students" database
-    # remember each row should be a new instance of the Student class
     sql = <<-SQL
     SELECT * FROM students
     SQL
@@ -23,8 +21,6 @@ class Student
   end
 
   def self.find_by_name(name)
-    # find the student in the database given a name
-    # return a new instance of the Student class
     sql = <<-SQL
       SELECT * FROM students
       WHERE name = ?
@@ -58,9 +54,10 @@ class Student
       end
   end
 
-  def self.first_x_students_in_grade_10(num)
+  def self.first_student_in_grade_10(num)
     sql = <<-SQL
-      SELECT * FROM students
+      SELECT * FROM st
+      udents
       WHERE grade = 10
       LIMIT ?
       SQL
